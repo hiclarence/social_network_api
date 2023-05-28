@@ -44,30 +44,30 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
     // Add a reaction
-addReaction(req, res) {
+  addReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
-      { $addToSet: { responses: req.body } },
+      { $addToSet: { reactions: req.body } },
       { runValidators: true, new: true }
     )
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: 'No thought with this id!' })
-          : res.json(video)
+          : res.json({ message: 'Reaction added' })
       )
       .catch((err) => res.status(500).json(err));
   },
   // Remove reaction
   removeReaction(req, res) {
-    Video.findOneAndUpdate(
+    Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
-      { $pull: { reactions: { responseId: req.params.responseId } } },
+      { $pull: { reactions: { reactionId: req.params.reactionId } } },
       { runValidators: true, new: true }
     )
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: 'No thought with this id!' })
-          : res.json(video)
+          : res.json({ message: 'Reaction removed' })
       )
       .catch((err) => res.status(500).json(err));
   },
