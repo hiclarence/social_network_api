@@ -22,7 +22,7 @@ const reactionSchema = new mongoose.Schema({
     }
     },
     {
-    timestamps: true,
+    timestamps: { createdAt: true, updatedAt: false },
     toJSON: { getters: true, virtuals: true },
     }
 );
@@ -47,7 +47,7 @@ const thoughtSchema = new mongoose.Schema(
     reactions: [reactionSchema]
     },
     {
-    timestamps: true,
+    timestamps: { createdAt: true, updatedAt: false },
     toJSON: { getters: true, virtuals: true },
     }
 );
