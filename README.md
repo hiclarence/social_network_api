@@ -17,7 +17,13 @@ Running `npm install` to install dev dependencies, followed by a `node index.js`
 
 ## Link
 
-You can view the full video here: 
+You can view the full videos here: 
+
+Testing User Routes:  https://www.loom.com/share/484987bfa99741cfbf26c7665c1d96a7
+
+Testing Thought Routes: https://www.loom.com/share/1d1798c0b0e74a7b9c9c51b9bdfae794
+
+Removing a reaction and adding a thought : https://www.loom.com/share/7660b203521640cd97d23687b800895d
 
 ## Technologies
 
@@ -31,20 +37,3 @@ You can view the full video here:
 ## License
 
 This project is covered by an MIT License
-
-//DONE
-GIVEN a social network API
-WHEN I enter the command to invoke the application
-THEN my server is started and the Mongoose models are synced to the MongoDB database
-
-//done
-WHEN I open API GET routes in Insomnia for users and thoughts
-THEN the data for each of these routes is displayed in a formatted JSON
-
-//done
-WHEN I test API POST, PUT, and DELETE routes in Insomnia
-THEN I am able to successfully create, update, and delete users and thoughts in my database
-
-//halfway there: friends remaining
-WHEN I test API POST and DELETE routes in Insomnia
-THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list

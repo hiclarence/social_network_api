@@ -1,4 +1,4 @@
-const { Thought } = require('../models');
+const { Thought,User } = require('../models');
 
 module.exports = {
   
@@ -23,7 +23,14 @@ module.exports = {
   // create a new thought
   createThought(req, res) {
     Thought.create(req.body)
-      .then((dbThoughtData) => res.json(dbThoughtData))
+      .then((dbThoughtData) => {
+        return User.findOneAndUpdate(
+            { _id: req.body.userId },
+            { $push: { thoughts: dbThoughtData.id } },
+            {new : true}
+          )
+      })
+      .then ((dbUserData) => res.json(dbUserData))
       .catch((err) => res.status(500).json(err));
   },
   
@@ -39,6 +46,7 @@ module.exports = {
   },
   
   //delete a thought
+  // TODO: delete a thought from a user as well 
   deleteThought(req, res) {
     Thought.findOneAndRemove({ _id: req.params.thoughtId })
       .then((thought) =>
