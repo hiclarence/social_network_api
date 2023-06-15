@@ -2,7 +2,7 @@
 
 ## Description
 
-This application leverages Monogo DB through an MVC framework to create a social network API. Through the REST API, we will be able to view, edit, add, and delete specific users. Similar CRUD functionalities can be found for the thoughts model.  Users can share their thoughts, react to friends’ thoughts, and create a friend list. 
+This application leverages Mongo DB through an MVC framework to create a social network API. Through the REST API, we will be able to view, edit, add, and delete specific users. Similar CRUD functionalities can be found for the thoughts model.  Users can share their thoughts, react to friends’ thoughts, and create a friend list. 
 
 ## Table of Contents
 
